@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stick & Spice - Handcrafted custom designed cups and jars. Perfect for gifts, home organization, and personal style.">
+    <title>Stick & Spice | Handcrafted Custom Cups & Jars</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Mobile Optimization CSS -->
+    <link rel="stylesheet" href="mobilecss.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://rawcdn.githack.com/Stickandspice/stickandspice.github.io/b33e462d7419c9ad5bde147ee870a4b3a05e362f/1272905872256750749-removebg-preview.png" alt="Stick & Spice Logo">
+                Stick & Spice
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="bundles.html" class="nav-link">Bundles</a></li>
+                <li><a href="about.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <button id="cartButton" class="cart-button" onclick="openCart()" style="position: relative; background: var(--primary-gradient); color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 50px; cursor: pointer; font-size: 1rem; margin-left: 1rem; transition: all 0.3s ease;">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount" class="cart-badge" style="position: absolute; top: -8px; right: -8px; background: #e74c3c; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold;">0</span>
+            </button>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Slideshow -->
+    <section class="hero-slideshow">
+        <!-- Slide 1: Jars -->
+        <a href="products.html" class="hero-slide active" data-slide="1">
+            <div class="hero-slide-bg" style="background: url('https://images2.imgbox.com/48/d2/GzhvsYPN_o.jpeg') center/cover no-repeat;"></div>
+            <div class="hero-content">
+                <h1>Beautiful Custom Jars</h1>
+                <p>Perfect for spices, storage, and adding charm to your kitchen</p>
+                <div class="hero-cta">Explore Jars →</div>
+            </div>
+        </a>
+
+        <!-- Slide 2: Bundles -->
+        <a href="products.html" class="hero-slide" data-slide="2">
+            <div class="hero-slide-bg" style="background: url('https://images2.imgbox.com/f5/18/0bFCDILc_o.jpeg') center/cover no-repeat;"></div>
+            <div class="hero-content">
+                <h1>Curated Spice Bundles</h1>
+                <p>Complete collections for every culinary adventure - Save more when you bundle!</p>
+                <div class="hero-cta">Shop Bundles →</div>
+            </div>
+        </a>
+
+        <!-- Slide 3: Shipping -->
+        <a href="products.html" class="hero-slide" data-slide="3">
+            <div class="hero-slide-bg" style="background: url('https://images2.imgbox.com/45/83/rkywcVeE_o.jpeg') center/cover no-repeat;"></div>
+            <div class="hero-content">
+                <h1>Packed with Love, Shipped with Care</h1>
+                <p>Every order carefully packaged and ready to bring joy to your kitchen</p>
+                <div class="hero-cta">Start Shopping →</div>
+            </div>
+        </a>
+
+        <!-- Navigation Arrows -->
+        <button class="slide-arrow slide-prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slide-arrow slide-next" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Pause/Play Button -->
+        <button class="slide-pause" id="slidePauseBtn" aria-label="Pause slideshow">
+            <i class="fas fa-pause"></i>
+        </button>
+
+        <!-- Slide Indicators -->
+        <div class="slide-indicators">
+            <button class="slide-dot active" data-slide="1" aria-label="Go to slide 1"></button>
+            <button class="slide-dot" data-slide="2" aria-label="Go to slide 2"></button>
+            <button class="slide-dot" data-slide="3" aria-label="Go to slide 3"></button>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Popular Designs</h2>
+            <div class="product-grid" id="popularProducts">
+                <!-- Products will be loaded here via JavaScript -->
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/88/70/4zuZcPwZ_o.jpeg" alt="Garlic Powder" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Garlic Powder</h3>
+                        <p class="product-description">Our most popular spice! Aromatic garlic powder in a handcrafted jar</p>
+                        <div class="product-price">$5.99</div>
+                        <a href="products.html" class="add-to-cart-btn">View Product</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/01/f7/0bWRfJJw_o.jpeg" alt="Salt & Pepper Duo" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Salt & Pepper Duo</h3>
+                        <p class="product-description">Perfect pair of custom salt and pepper jars for your table</p>
+                        <div class="product-price">$10.99</div>
+                        <a href="products.html" class="add-to-cart-btn">View Bundle</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/35/ee/9zvbUFeH_o.jpeg" alt="Herb Bundle" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Herb Bundle</h3>
+                        <p class="product-description">Complete collection of essential herbs - Save more when you bundle!</p>
+                        <div class="product-price">$24.99</div>
+                        <a href="bundles.html" class="add-to-cart-btn">Shop Bundles</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Stick & Spice</h3>
+                <p>Handcrafted spice jars and kitchen essentials, designed with family in mind to hold the flavors and moments of your everyday life.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1Bo68Sa8e6/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/stickandspicellc?igsh=NGFmZHhhbzg3ZXg2" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="products.html">Products</a>
+                <a href="about.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns & Exchanges</a>
+                <a href="about.html">FAQs</a>
+                <a href="#">Care Instructions</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for updates, new designs, and special offers!</p>
+                <form style="margin-top: 1rem;">
+                    <input type="email" placeholder="Your email" style="width: 100%; padding: 0.75rem; border-radius: 5px; border: none; margin-bottom: 0.5rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stick & Spice. All rights reserved. | Handcrafted with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="cart-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 10000; overflow-y: auto; backdrop-filter: blur(4px);">
+        <div class="cart-modal-content" style="background: linear-gradient(to bottom, #d4879c 0%, #d4879c 30%, #ffe8f0 30%, #ffe8f0 100%); max-width: 700px; margin: 2rem auto; border-radius: 20px; box-shadow: 0 25px 70px rgba(204, 86, 126, 0.4); position: relative; overflow: hidden;">
+            <div class="cart-header" style="background: transparent; color: white; padding: 2rem 2rem 1.5rem 2rem; border-radius: 20px 20px 0 0; display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fas fa-shopping-cart" style="margin-right: 0.75rem;"></i>Your Cart</h2>
+                <button onclick="closeCart()" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.4); color: white; font-size: 1.5rem; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(255,255,255,0.35)'; this.style.transform='rotate(90deg)'" onmouseout="this.style.background='rgba(255,255,255,0.25)'; this.style.transform='rotate(0deg)'">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-body" style="padding: 0 2rem 2rem 2rem;">
+                <div id="cartItems" style="margin-bottom: 2rem;">
+                    <!-- Cart items will be inserted here -->
+                </div>
+                
+                <div id="freeShippingBar" style="background: white; padding: 1.25rem; border-radius: 12px; margin-bottom: 2rem; text-align: center; box-shadow: 0 2px 8px rgba(204, 86, 126, 0.1);">
+                    <p id="freeShippingText" style="margin: 0; color: #2d3436; font-weight: 600; font-size: 0.95rem;"></p>
+                    <div style="background: rgba(204, 86, 126, 0.15); height: 10px; border-radius: 20px; margin-top: 0.75rem; overflow: hidden;">
+                        <div id="freeShippingProgress" style="background: linear-gradient(90deg, #cc567e, #d4879c); height: 100%; width: 0%; transition: width 0.5s ease; border-radius: 20px; box-shadow: 0 0 10px rgba(204, 86, 126, 0.5);"></div>
+                    </div>
+                </div>
+                
+                <div id="suggestedProducts" style="display: none; margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(204, 86, 126, 0.1);">
+                    <h3 style="font-family: 'Playfair Display', serif; color: #cc567e; margin: 0 0 1.25rem 0; text-align: center; font-size: 1.3rem;">
+                        <i class="fas fa-gift" style="margin-right: 0.5rem;"></i>
+                        Add More for Free Shipping
+                    </h3>
+                    <div id="suggestedProductsGrid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <!-- Suggested products will be inserted here -->
+                    </div>
+                </div>
+                
+                <div class="cart-total" style="background: white; padding: 1.75rem; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(204, 86, 126, 0.1);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: #636e72;">Subtotal:</span>
+                        <span style="font-weight: 600; color: #2d3436;" id="cartSubtotal">$0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: #636e72;">Shipping:</span>
+                        <span style="font-weight: 600; color: #2d3436;" id="cartShipping">$0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding-top: 0.75rem; border-top: 2px solid rgba(204, 86, 126, 0.2);">
+                        <span style="font-size: 1.25rem; font-weight: 600; color: #2d3436;">Total:</span>
+                        <span style="font-size: 1.5rem; font-weight: 700; color: #cc567e; font-family: 'Playfair Display', serif;" id="cartTotal">$0.00</span>
+                    </div>
+                </div>
+                
+                <div style="display: grid; gap: 1rem;">
+                    <button onclick="proceedToCheckout()" style="background: linear-gradient(135deg, #cc567e, #d4879c); color: white; border: none; padding: 1.1rem 1.5rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(204, 86, 126, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(204, 86, 126, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(204, 86, 126, 0.3)'">
+                        <i class="fas fa-lock" style="margin-right: 0.75rem;"></i>Secure Checkout
+                    </button>
+                    <button onclick="closeCart()" style="background: white; color: #cc567e; border: 2px solid #cc567e; padding: 0.85rem 1.5rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#cc567e'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#cc567e'">
+                        <i class="fas fa-arrow-left" style="margin-right: 0.5rem;"></i>Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

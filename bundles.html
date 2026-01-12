@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Save more when you bundle! Handcrafted spice jar bundles perfect for gifting or stocking your kitchen with essentials.">
+    <title>Spice Bundles | Stick & Spice</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Mobile Optimization CSS -->
+    <link rel="stylesheet" href="mobilecss.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://rawcdn.githack.com/Stickandspice/stickandspice.github.io/b33e462d7419c9ad5bde147ee870a4b3a05e362f/1272905872256750749-removebg-preview.png" alt="Stick & Spice Logo">
+                Stick & Spice
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="bundles.html" class="nav-link active">Bundles</a></li>
+                <li><a href="about.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <button id="cartButton" class="cart-button" onclick="openCart()" style="position: relative; background: var(--primary-gradient); color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 50px; cursor: pointer; font-size: 1rem; margin-left: 1rem; transition: all 0.3s ease;">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount" class="cart-badge" style="position: absolute; top: -8px; right: -8px; background: #e74c3c; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold;">0</span>
+            </button>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bundles Section -->
+    <section class="section" style="padding: 5rem 2rem;">
+        <div class="container">
+            <!-- Section Header -->
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Choose Your Bundle</h2>
+                <p style="font-size: 1.1rem; color: #636e72; line-height: 1.8;">Select from our curated bundles below! Each bundle includes handcrafted spice jars filled with premium spices at a discounted price.</p>
+            </div>
+
+            <!-- Bundles Grid -->
+            <div class="product-grid" id="bundleGrid">
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/a1/6c/1sUwDAfb_o.jpeg" alt="Aromatics Bundle" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Aromatics Bundle</h3>
+                        <p class="product-description">Perfect aromatics bundle with essential spices</p>
+                        <div class="product-price">$17.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(55)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/01/f7/0bWRfJJw_o.jpeg" alt="Salt & Pepper Duo" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Salt & Pepper Duo</h3>
+                        <p class="product-description">Classic salt and pepper duo set</p>
+                        <div class="product-price">$10.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(56)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/35/ee/9zvbUFeH_o.jpeg" alt="Herb Bundle 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Herb Bundle 1</h3>
+                        <p class="product-description">Essential herbs bundle for everyday cooking</p>
+                        <div class="product-price">$17.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(57)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/33/5b/JCt1brI7_o.jpeg" alt="Herb Bundle 2" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Herb Bundle 2</h3>
+                        <p class="product-description">Premium herbs collection for gourmet dishes</p>
+                        <div class="product-price">$13.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(58)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/a5/5b/ZKPdVga5_o.jpeg" alt="Herb Bundle 3" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Herb Bundle 3</h3>
+                        <p class="product-description">Complete herb assortment for all your recipes</p>
+                        <div class="product-price">$13.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(59)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/3f/2a/tBlo5elF_o.jpeg" alt="Basic Herb Bundle" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Basic Herb Bundle</h3>
+                        <p class="product-description">Starter herb bundle with kitchen essentials</p>
+                        <div class="product-price">$17.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(60)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/b5/9f/QlQn8O7T_o.jpeg" alt="Core Pair Bundle" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Core Pair Bundle</h3>
+                        <p class="product-description">Essential core spices duo</p>
+                        <div class="product-price">$10.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(61)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/2c/c7/yHx3xNt4_o.jpeg" alt="Salt Bundle 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Salt Bundle 1</h3>
+                        <p class="product-description">Premium salt collection variety pack</p>
+                        <div class="product-price">$13.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(62)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images2.imgbox.com/d6/53/AM0nilfd_o.jpeg" alt="Salt Bundle 2" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Salt Bundle 2</h3>
+                        <p class="product-description">Gourmet salt assortment bundle</p>
+                        <div class="product-price">$13.99</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(63)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Jars Bundle - Premium Offer -->
+            <div style="margin-top: 5rem; padding: 3rem; background: linear-gradient(135deg, #fff9e6 0%, #fffaf0 100%); border: 5px solid gold; border-radius: 20px; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -10px; right: -10px; background: gold; color: #2d3436; padding: 0.5rem 1.5rem; border-radius: 0 20px 0 20px; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);">
+                    <i class="fas fa-crown" style="margin-right: 0.5rem;"></i>ULTIMATE COLLECTION
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center;">
+                    <div style="text-align: center;">
+                        <img src="https://rawcdn.githack.com/Stickandspice/stickandspice.github.io/318ce6b56e8a4f1bbe4d0391212d6a5323b52c94/png-treasure-chest-treasure-wood-architecture_53876-802360.jpg" alt="All Jars Bundle - Complete Collection" style="max-width: 100%; height: auto; max-height: 350px; object-fit: contain; filter: drop-shadow(0 10px 25px rgba(255, 215, 0, 0.4));">
+                    </div>
+                    <div>
+                        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2d3436; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-star" style="color: gold; font-size: 2rem;"></i>
+                            All Jars Bundle - Complete Collection
+                            <i class="fas fa-star" style="color: gold; font-size: 2rem;"></i>
+                        </h2>
+                        <p style="font-size: 1.2rem; color: #636e72; line-height: 1.8; margin-bottom: 1.5rem;">
+                            <strong style="color: #2d3436;">Get ALL 56 premium spice jars</strong> in one incredible collection! Every spice you need, beautifully handcrafted and ready to transform your kitchen. The ultimate gift for yourself or a loved one who loves to cook!
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <div style="font-size: 3rem; font-weight: 700; color: #2d3436; font-family: 'Playfair Display', serif;">$259.00</div>
+                                <div style="text-decoration: line-through; color: #999; font-size: 1.3rem;">$335.44</div>
+                            </div>
+                            <div style="background: #27ae60; color: white; padding: 1rem 1.5rem; border-radius: 12px; font-weight: 700; font-size: 1.3rem; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);">
+                                <i class="fas fa-tag" style="margin-right: 0.5rem;"></i>Save $76.44!
+                            </div>
+                        </div>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                            <li style="display: flex; align-items: center; gap: 0.5rem; color: #2d3436; font-weight: 600;">
+                                <i class="fas fa-check-circle" style="color: #27ae60; font-size: 1.2rem;"></i>
+                                All 56 Premium Spices
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem; color: #2d3436; font-weight: 600;">
+                                <i class="fas fa-check-circle" style="color: #27ae60; font-size: 1.2rem;"></i>
+                                Handcrafted Jars
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem; color: #2d3436; font-weight: 600;">
+                                <i class="fas fa-check-circle" style="color: #27ae60; font-size: 1.2rem;"></i>
+                                Free Shipping Included
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem; color: #2d3436; font-weight: 600;">
+                                <i class="fas fa-check-circle" style="color: #27ae60; font-size: 1.2rem;"></i>
+                                Perfect Gift Option
+                            </li>
+                        </ul>
+                        <button class="add-to-cart-btn" onclick="addToCart(64)" style="font-size: 1.3rem; padding: 1.25rem 3rem; background: linear-gradient(135deg, gold, #ffd700); color: #2d3436; font-weight: 700; box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4); border: 2px solid #b8860b;">
+                            <i class="fas fa-shopping-cart" style="margin-right: 0.75rem;"></i>Add Complete Collection to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- Trust Badges -->
+            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 4rem; padding-top: 3rem; border-top: 2px solid #ffe8f0;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #cc567e; margin-bottom: 0.5rem;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <p style="font-weight: 600; color: #2d3436;">Secure Checkout</p>
+                    <p style="color: #636e72; font-size: 0.9rem;">SSL Encrypted</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #cc567e; margin-bottom: 0.5rem;">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <p style="font-weight: 600; color: #2d3436;">Fast Shipping</p>
+                    <p style="color: #636e72; font-size: 0.9rem;">2-5 Business Days</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #cc567e; margin-bottom: 0.5rem;">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <p style="font-weight: 600; color: #2d3436;">Easy Returns</p>
+                    <p style="color: #636e72; font-size: 0.9rem;">30-Day Guarantee</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #cc567e; margin-bottom: 0.5rem;">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <p style="font-weight: 600; color: #2d3436;">Handcrafted</p>
+                    <p style="color: #636e72; font-size: 0.9rem;">Made with Love</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Stick & Spice</h3>
+                <p>Handcrafted spice jars and kitchen essentials, designed with family in mind to hold the flavors and moments of your everyday life.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1Bo68Sa8e6/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/stickandspicellc?igsh=NGFmZHhhbzg3ZXg2" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="products.html">Products</a>
+                <a href="bundles.html">Bundles</a>
+                <a href="about.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns & Exchanges</a>
+                <a href="about.html">FAQs</a>
+                <a href="#">Care Instructions</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for updates, new designs, and special offers!</p>
+                <form style="margin-top: 1rem;">
+                    <input type="email" placeholder="Your email" style="width: 100%; padding: 0.75rem; border-radius: 5px; border: none; margin-bottom: 0.5rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stick & Spice. All rights reserved. | Handcrafted with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="cart-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 10000; overflow-y: auto; backdrop-filter: blur(4px);">
+        <div class="cart-modal-content" style="background: linear-gradient(to bottom, #d4879c 0%, #d4879c 30%, #ffe8f0 30%, #ffe8f0 100%); max-width: 700px; margin: 2rem auto; border-radius: 20px; box-shadow: 0 25px 70px rgba(204, 86, 126, 0.4); position: relative; overflow: hidden;">
+            <div class="cart-header" style="background: transparent; color: white; padding: 2rem 2rem 1.5rem 2rem; border-radius: 20px 20px 0 0; display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fas fa-shopping-cart" style="margin-right: 0.75rem;"></i>Your Cart</h2>
+                <button onclick="closeCart()" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.4); color: white; font-size: 1.5rem; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(255,255,255,0.35)'; this.style.transform='rotate(90deg)'" onmouseout="this.style.background='rgba(255,255,255,0.25)'; this.style.transform='rotate(0deg)'">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-body" style="padding: 0 2rem 2rem 2rem;">
+                <div id="cartItems" style="margin-bottom: 2rem;">
+                    <!-- Cart items will be inserted here -->
+                </div>
+                
+                <div id="freeShippingBar" style="background: white; padding: 1.25rem; border-radius: 12px; margin-bottom: 2rem; text-align: center; box-shadow: 0 2px 8px rgba(204, 86, 126, 0.1);">
+                    <p id="freeShippingText" style="margin: 0; color: #2d3436; font-weight: 600; font-size: 0.95rem;"></p>
+                    <div style="background: rgba(204, 86, 126, 0.15); height: 10px; border-radius: 20px; margin-top: 0.75rem; overflow: hidden;">
+                        <div id="freeShippingProgress" style="background: linear-gradient(90deg, #cc567e, #d4879c); height: 100%; width: 0%; transition: width 0.5s ease; border-radius: 20px; box-shadow: 0 0 10px rgba(204, 86, 126, 0.5);"></div>
+                    </div>
+                </div>
+                
+                <div id="suggestedProducts" style="display: none; margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(204, 86, 126, 0.1);">
+                    <h3 style="font-family: 'Playfair Display', serif; color: #cc567e; margin: 0 0 1.25rem 0; text-align: center; font-size: 1.3rem;">
+                        <i class="fas fa-gift" style="margin-right: 0.5rem;"></i>
+                        Add More for Free Shipping
+                    </h3>
+                    <div id="suggestedProductsGrid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <!-- Suggested products will be inserted here -->
+                    </div>
+                </div>
+                
+                <div class="cart-total" style="background: white; padding: 1.75rem; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(204, 86, 126, 0.1);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: #636e72;">Subtotal:</span>
+                        <span style="font-weight: 600; color: #2d3436;" id="cartSubtotal">$0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: #636e72;">Shipping:</span>
+                        <span style="font-weight: 600; color: #2d3436;" id="cartShipping">$0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding-top: 0.75rem; border-top: 2px solid rgba(204, 86, 126, 0.2);">
+                        <span style="font-size: 1.25rem; font-weight: 600; color: #2d3436;">Total:</span>
+                        <span style="font-size: 1.5rem; font-weight: 700; color: #cc567e; font-family: 'Playfair Display', serif;" id="cartTotal">$0.00</span>
+                    </div>
+                </div>
+                
+                <div style="display: grid; gap: 1rem;">
+                    <button onclick="proceedToCheckout()" style="background: linear-gradient(135deg, #cc567e, #d4879c); color: white; border: none; padding: 1.1rem 1.5rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(204, 86, 126, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(204, 86, 126, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(204, 86, 126, 0.3)'">
+                        <i class="fas fa-lock" style="margin-right: 0.75rem;"></i>Secure Checkout
+                    </button>
+                    <button onclick="closeCart()" style="background: white; color: #cc567e; border: 2px solid #cc567e; padding: 0.85rem 1.5rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#cc567e'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#cc567e'">
+                        <i class="fas fa-arrow-left" style="margin-right: 0.5rem;"></i>Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
